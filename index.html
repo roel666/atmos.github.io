@@ -1,88 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Who'd have thought open source would take it this far?</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-    $(function() {
-            var limit = 13        // how many repos to list
-            var login = 'atmos'   // your username
+<!DOCTYPE html>
+<html>
 
-            var repos = [], list = $('#right_menu ul')
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Atmos.GitHub.io : worthless shit">
 
-            $.getJSON('http://github.com/api/v1/json/' + login + '?callback=?', function(data) {
-                $.each(data.user.repositories, function() {
-                    if (!this.fork) repos.push(this)
-                    })
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-                repos.sort(function(a, b) {
-                    return b.watchers - a.watchers
-                    })
+    <title>Atmos.GitHub.io</title>
+  </head>
 
-                $.each(repos.slice(0, limit), function() {
-                    list.append('<li><a href="' + this.url + '">' + this.name + '</a></li>')
-                    })
-                })        
-            })
-</script>
-</head>
+  <body>
 
-<body>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/roel666/atmos.github.io">View on GitHub</a>
 
-<div id="container">
+          <h1 id="project_title">Atmos.GitHub.io</h1>
+          <h2 id="project_tagline">worthless shit</h2>
 
-    <div id="header">
-        <h1>atmos.github.com</h1>
-        <h2>github's where i share my computer codez at, fool</h2>
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/roel666/atmos.github.io/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/roel666/atmos.github.io/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
     </div>
 
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="this-is-the-data-for-my-personal-website" class="anchor" href="#this-is-the-data-for-my-personal-website" aria-hidden="true"><span class="octicon octicon-link"></span></a>This is the data for my personal website</h1>
 
-<div id="linkbar">
-    <div id="navcontainer">
-        <ul id="navlist">
-            <li><a href="http://atmos.github.com">GitHub</a></li>
-            <li><a href="http://www.atmos.org">Blog</a></li>
-            <li><a href="http://tumblr.atmos.org">Tumblr</a></li>
-            <li><a href="http://flickr.com/photos/atmos">Photos</a></li>
-            <li><a href="http://engineyard.com">Engine Yard</a></li>
-        </ul>
+<p>This is the combination of two older blog dumps that I have from 2000 - 2009.  all of my atmos.org posts combined.</p>
+
+<p>It is automatically transformed by Jekyll into a static site whenever I push this repository to GitHub.</p>
+
+<h1>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
+
+<p>The following directories and their contents are Copyright Corey Donohoe.  You may not reuse anything therein without my permission:</p>
+
+<ul>
+<li>  _posts/</li>
+<li>  images/</li>
+</ul>
+
+<p>All other directories and files are MIT Licensed.</p>
+      </section>
     </div>
-</div>
 
-
-
-<div id="content">
-    <div id="right_menu">
-        <h4>Some of My Codes</h4>
-        <div class="navcontainer">
-            <ul class="navlist">
-            </ul>
-        </div>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Atmos.GitHub.io maintained by <a href="https://github.com/roel666">roel666</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
     </div>
 
-    <h3>Merb Hoptoad Notifier Version Bump</h3>
-    <p>I got a gripe from <a href="http://github.com/fairchild">fairchild</a> about certain senstive environmental variables getting posted to hoptoad via the notifier, so this morning I ported more of the rails plugin over to handle filtering various environment variables.</p>
+    
 
-    <h3>Flatirons on Merb 1.0.6</h3>
-    <p>With the announcement of merb 1.0.[56] I couldn't help but try the new bundling.  Long story short it doesn't suck at all.  I updated flatirons and the merb-openid-example to work with thor bundling and merb 1.0.6 this afternoon.  The merb-openid example needs some love, fork it and fix it party people!</p>
-
-    <h3>Really don't know what I'll use this for, yet</h3>
-    <p>So I'm not really sure what I'll do with this yet, but I'd love to make a
-        more friendly home page for my codes.  The GitHub site is sexy and all but
-        maybe if I did some designy type shit then maybe folks will wanna try
-        my stuffs!  Prolly not but I love GitHub so I had to test out the new
-        features.  I bet someone interesting like <a
-            href="http://elliottcable.github.com">elliottcable</a> does something
-        interesting with his.
-    </p>
-</div>
-
-
-<div id="footer">
-    <p>&copy; <a href="http://csstemplateheaven.com">CssTemplateHeaven</a> | Created by Dieter Schneider 2006 | Valid Xhtml 1.0 Strict! </p>
-</div>
-</div>
-</body>
+  </body>
 </html>
